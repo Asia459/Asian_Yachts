@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asian Yachts — Direct Yachts from Asia</title>
+<meta name="description" content="Twelfth Night Limited. Премиальный брокер яхт из Гонконга, Сингапура и Таиланда. Доставка в Россию под ключ за 35 дней.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --imperial-red: #A11E22;
+  --imperial-red-deep: #7a1612;
+  --deep-ocean: #0F2E4D;
+  --deep-ocean-dark: #061a2e;
+  --deep-ocean-soft: #1f4773;
+  --warm-ivory: #F6F0E6;
+  --warm-ivory-deep: #ebe0cc;
+  --warm-ivory-cream: #faf6ed;
+  --matte-gold: #C5A46D;
+  --matte-gold-deep: #a08549;
+  --matte-gold-soft: #d6bc8e;
+  --graphite: #1A1A1A;
+  --line: rgba(15, 46, 77, 0.12);
+  --line-soft: rgba(15, 46, 77, 0.06);
+  --serif: 'Playfair Display', Georgia, serif;
+  --serif-body: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --cn: 'Noto Serif SC', serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--warm-ivory);
+  color: var(--deep-ocean);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ---------- GRAIN OVERLAY ---------- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s var(--ease);
+}
+.nav.scrolled {
+  background: rgba(246, 240, 230, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 14px 56px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-logo-cn {
+  font-family: var(--cn);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--imperial-red);
+  letter-spacing: 0.05em;
+}
+.nav-logo-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+  margin: 0 12px;
+}
+.nav-logo-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--deep-ocean);
+  text-transform: uppercase;
+}
+.nav-logo-name em {
+  display: block;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  color: var(--deep-ocean-soft);
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--deep-ocean);
+}
+.nav-links a {
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--imperial-red); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--imperial-red);
+  transition: width 0.4s var(--ease);
+}
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid var(--deep-ocean);
+  background: transparent;
+  color: var(--deep-ocean);
+  transition: all 0.4s var(--ease);
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover {
+  background: var(--deep-ocean);
+  color: var(--warm-ivory);
+}
+.btn-red {
+  background: var(--imperial-red);
+  color: var(--warm-ivory);
+  border-color: var(--imperial-red);
+}
+.btn-red:hover {
+  background: var(--imperial-red-deep);
+  border-color: var(--imperial-red-deep);
+  color: var(--warm-ivory);
+}
+.btn-large {
+  padding: 22px 44px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+}
+
+@media (max-width: 1024px) {
+  .nav { padding: 18px 24px; }
+  .nav.scrolled { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .nav-fleet { display: none; }
+  .nav-logo-name em { display: none; }
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--warm-ivory);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 120px 56px 80px;
+}
+
+.hero-cn-deco {
+  position: absolute;
+  font-family: var(--cn);
+  color: var(--imperial-red);
+  opacity: 0.045;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  line-height: 1;
+}
+.hero-cn-deco.cn-1 {
+  top: 4%;
+  right: -6%;
+  font-size: clamp(280px, 36vw, 560px);
+}
+.hero-cn-deco.cn-2 {
+  bottom: -8%;
+  left: -4%;
+  font-size: clamp(220px, 28vw, 440px);
+  color: var(--deep-ocean);
+  opacity: 0.04;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--imperial-red);
+  margin-bottom: 36px;
+  font-weight: 500;
+  animation: fadeUp 1s var(--ease) 0.2s both;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--imperial-red);
+}
+.hero-eyebrow-cn {
+  font-family: var(--cn);
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 8.5vw, 132px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--deep-ocean);
+}
+.hero-title .row {
+  display: block;
+  animation: fadeUp 1.2s var(--ease) both;
+}
+.hero-title .row:nth-child(1) { animation-delay: 0.4s; }
+.hero-title .row:nth-child(2) { animation-delay: 0.55s; }
+.hero-title .row:nth-child(3) { animation-delay: 0.7s; }
+.hero-title em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  color: var(--imperial-red);
+  font-weight: 400;
+}
+
+.hero-wave {
+  margin: 32px 0 48px;
+  width: 100%;
+  max-width: 720px;
+  height: 50px;
+  animation: fadeUp 1s var(--ease) 0.9s both;
+}
+.hero-wave svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hero-wave path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: brushPaint 2.5s var(--ease) 1.1s forwards;
+}
+@keyframes brushPaint {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-top: 24px;
+}
+
+.hero-lead {
+  font-family: var(--serif-body);
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--deep-ocean);
+  max-width: 580px;
+  animation: fadeUp 1s var(--ease) 1.1s both;
+}
+.hero-lead em {
+  font-style: italic;
+  color: var(--imperial-red);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  animation: fadeUp 1s var(--ease) 1.3s both;
+}
+
+.hero-meta {
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  animation: fadeUp 1s var(--ease) 1.5s both;
+}
+.hero-meta-num {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--deep-ocean);
+}
+.hero-meta-num em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 0.55em;
+  color: var(--imperial-red);
+  margin-left: 4px;
+  font-weight: 500;
+}
+.hero-meta-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--deep-ocean-soft);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .hero { padding: 100px 24px 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { width: 100%; }
+}
+
+/* ---------- MARQUEE ---------- */
+.marquee {
+  background: var(--deep-ocean);
+  color: var(--warm-ivory);
+  padding: 28px 0;
+  overflow: hidden;
+  position: relative;
+}
+.marquee::before, .marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--deep-ocean), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--deep-ocean), transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 80px;
+  animation: marquee 50s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee-item {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  color: var(--warm-ivory);
+}
+.marquee-item::after {
+  content: '✦';
+  color: var(--matte-gold);
+  font-style: normal;
+  font-size: 12px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 140px 56px;
+  position: relative;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  margin-bottom: 100px;
+  align-items: end;
+}
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--imperial-red);
+  font-weight: 500;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: var(--imperial-red);
+}
+.section-eyebrow-cn {
+  font-family: var(--cn);
+  font-size: 14px;
+  margin-left: 4px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--deep-ocean);
+}
+.section-title em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  color: var(--imperial-red);
+  font-weight: 400;
+}
+.section-lead {
+  font-family: var(--serif-body);
+  font-size: 22px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--deep-ocean);
+  max-width: 580px;
+}
+
+@media (max-width: 1024px) {
+  .section { padding: 80px 24px; }
+  .section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
+}
+
+/* ---------- STORY ---------- */
+.story {
+  background: var(--deep-ocean);
+  color: var(--warm-ivory);
+  position: relative;
+  overflow: hidden;
+}
+.story .section-title { color: var(--warm-ivory); }
+.story .section-eyebrow { color: var(--matte-gold-soft); }
+.story .section-eyebrow::before { background: var(--matte-gold-soft); }
+.story .section-lead { color: rgba(246, 240, 230, 0.75); }
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+.story-text {
+  font-family: var(--serif-body);
+  font-size: 19px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(246, 240, 230, 0.85);
+}
+.story-text p { margin-bottom: 24px; }
+.story-text p:last-child { margin-bottom: 0; }
+.story-text strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--warm-ivory);
+}
+.story-text em {
+  color: var(--matte-gold-soft);
+  font-style: italic;
+}
+
+.story-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--deep-ocean-dark);
+  overflow: hidden;
+  border: 1px solid rgba(197, 164, 109, 0.2);
+}
+.story-visual-cn {
+  position: absolute;
+  font-family: var(--cn);
+  font-size: clamp(180px, 24vw, 380px);
+  font-weight: 700;
+  color: var(--imperial-red);
+  opacity: 0.18;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  user-select: none;
+}
+.story-visual-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  z-index: 3;
+}
+.story-visual-label {
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--matte-gold-soft);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.story-visual-quote {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--warm-ivory);
+  font-style: italic;
+}
+.story-visual-quote em {
+  color: var(--matte-gold-soft);
+}
+.corner {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-color: var(--matte-gold);
+}
+.corner.tl { top: 16px; left: 16px; border-top: 2px solid; border-left: 2px solid; }
+.corner.tr { top: 16px; right: 16px; border-top: 2px solid; border-right: 2px solid; }
+.corner.bl { bottom: 16px; left: 16px; border-bottom: 2px solid; border-left: 2px solid; }
+.corner.br { bottom: 16px; right: 16px; border-bottom: 2px solid; border-right: 2px solid; }
+
+@media (max-width: 1024px) {
+  .story-grid { grid-template-columns: 1fr; gap: 40px; }
+  .story-visual { aspect-ratio: 1/1; }
+}
+
+/* ---------- PHILOSOPHY ---------- */
+.philosophy { background: var(--warm-ivory); }
+.philosophy-cn-bg {
+  position: absolute;
+  font-family: var(--cn);
+  color: var(--imperial-red);
+  opacity: 0.04;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+  font-size: clamp(280px, 32vw, 480px);
+  line-height: 1;
+  top: 80px;
+  right: -40px;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.principle {
+  background: var(--warm-ivory);
+  padding: 56px 40px;
+  position: relative;
+  transition: all 0.6s var(--ease);
+}
+.principle:hover { background: var(--deep-ocean); }
+.principle:hover .principle-num,
+.principle:hover .principle-cn { color: var(--matte-gold-soft); }
+.principle:hover .principle-text,
+.principle:hover .principle-title { color: var(--warm-ivory); }
+
+.principle-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.principle-num {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--matte-gold-deep);
+  font-style: italic;
+  font-weight: 500;
+  transition: color 0.6s;
+}
+.principle-cn {
+  font-family: var(--cn);
+  font-size: 56px;
+  color: var(--imperial-red);
+  font-weight: 600;
+  line-height: 1;
+  transition: color 0.6s;
+}
+.principle-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--deep-ocean);
+  transition: color 0.6s;
+}
+.principle-text {
+  font-family: var(--serif-body);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--deep-ocean);
+  transition: color 0.6s;
+}
+
+@media (max-width: 1024px) {
+  .principles { grid-template-columns: 1fr; }
+  .philosophy-cn-bg { font-size: 200px; }
+}
+
+/* ---------- JOURNEY ---------- */
+.journey { background: var(--warm-ivory-deep); }
+.steps { margin-top: 60px; }
+.step {
+  display: grid;
+  grid-template-columns: 80px 1fr 1.2fr 1fr;
+  gap: 40px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+  transition: all 0.5s var(--ease);
+}
+.step:last-child { border-bottom: 1px solid var(--line); }
+.step:hover { padding-left: 24px; }
+.step:hover .step-num { color: var(--imperial-red); }
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--matte-gold);
+  line-height: 1;
+  font-style: italic;
+  transition: color 0.5s;
+}
+.step-name {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  color: var(--deep-ocean);
+}
+.step-meta {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--imperial-red);
+  font-weight: 500;
+}
+.step-desc {
+  font-family: var(--serif-body);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--deep-ocean);
+}
+.step-detail {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--deep-ocean-soft);
+  font-weight: 400;
+}
+.step-detail-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--imperial-red);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .step { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+  .step:hover { padding-left: 0; }
+  .step-num { font-size: 40px; }
+}
+
+/* ---------- TRUST ---------- */
+.trust { background: var(--warm-ivory); }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  align-items: start;
+  margin-top: 60px;
+}
+.trust-item {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.trust-num {
+  font-family: var(--serif);
+  font-size: clamp(64px, 7vw, 120px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--deep-ocean);
+  display: flex;
+  align-items: baseline;
+}
+.trust-num em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 0.4em;
+  color: var(--imperial-red);
+  margin-left: 8px;
+  font-weight: 500;
+}
+.trust-num sup {
+  font-size: 0.4em;
+  color: var(--matte-gold-deep);
+  font-style: italic;
+  font-family: var(--serif-body);
+  margin-left: 4px;
+}
+.trust-label {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.5;
+  margin-top: 24px;
+  color: var(--deep-ocean);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+/* ---------- LEGAL ---------- */
+.legal { background: var(--warm-ivory-deep); position: relative; overflow: hidden; }
+.legal-cn-bg {
+  position: absolute;
+  font-family: var(--cn);
+  font-size: clamp(280px, 36vw, 520px);
+  color: var(--deep-ocean);
+  opacity: 0.03;
+  font-weight: 700;
+  bottom: -8%;
+  left: -6%;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.legal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+.legal-seal-wrap {
+  display: flex;
+  justify-content: center;
+}
+.legal-seal {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+.legal-seal-paper {
+  position: absolute;
+  inset: -8%;
+  background: var(--warm-ivory-cream);
+  border: 1px solid var(--line);
+  transform: rotate(-2deg);
+  z-index: 0;
+  box-shadow: 0 20px 40px -20px rgba(15, 46, 77, 0.2);
+}
+.legal-seal-stamp {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 12px 24px rgba(161, 30, 34, 0.25));
+  animation: stampFloat 6s ease-in-out infinite;
+}
+@keyframes stampFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+.legal-text {
+  font-family: var(--serif-body);
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--deep-ocean);
+  font-weight: 400;
+  margin-top: 32px;
+  margin-bottom: 40px;
+  max-width: 560px;
+}
+.legal-text strong {
+  font-family: var(--serif);
+  font-weight: 600;
+}
+.legal-points {
+  display: grid;
+  gap: 0;
+}
+.legal-point {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.legal-point:last-child { border-bottom: 1px solid var(--line); }
+.legal-point-icon {
+  font-family: var(--cn);
+  font-size: 32px;
+  color: var(--imperial-red);
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 4px;
+}
+.legal-point-text {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--deep-ocean);
+}
+.legal-point-text strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--deep-ocean);
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1024px) {
+  .legal-grid { grid-template-columns: 1fr; gap: 60px; }
+  .legal-cn-bg { font-size: 240px; }
+}
+
+/* ---------- TESTIMONIAL ---------- */
+.testimonial {
+  background: var(--imperial-red);
+  color: var(--warm-ivory);
+  padding: 160px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.testimonial-quote-mark {
+  position: absolute;
+  top: -80px;
+  left: 56px;
+  font-family: var(--serif);
+  font-size: 480px;
+  line-height: 1;
+  color: rgba(246, 240, 230, 0.08);
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+}
+.testimonial-cn {
+  position: absolute;
+  right: -4%;
+  bottom: -10%;
+  font-family: var(--cn);
+  font-size: clamp(220px, 28vw, 480px);
+  color: var(--warm-ivory);
+  opacity: 0.06;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+.testimonial-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.testimonial-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--matte-gold-soft);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+}
+.testimonial-eyebrow::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--matte-gold-soft);
+}
+.testimonial-quote {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.2vw, 48px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  margin-bottom: 56px;
+}
+.testimonial-quote em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 1.08em;
+  color: var(--matte-gold-soft);
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(246, 240, 230, 0.2);
+  max-width: 700px;
+}
+.testimonial-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--warm-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--imperial-red-deep);
+  font-weight: 500;
+  font-style: italic;
+}
+.testimonial-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.testimonial-meta {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(246, 240, 230, 0.7);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .testimonial { padding: 100px 24px; }
+}
+
+/* ---------- CTA FLEET ---------- */
+.cta-fleet {
+  background: var(--deep-ocean);
+  color: var(--warm-ivory);
+  padding: 140px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-fleet-cn {
+  position: absolute;
+  font-family: var(--cn);
+  font-size: clamp(280px, 36vw, 580px);
+  color: var(--imperial-red);
+  opacity: 0.06;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.cta-fleet-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cta-fleet-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--matte-gold-soft);
+  margin-bottom: 32px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.cta-fleet-eyebrow::before, .cta-fleet-eyebrow::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--matte-gold-soft);
+}
+.cta-fleet-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+}
+.cta-fleet-title em {
+  font-family: var(--serif-body);
+  font-style: italic;
+  color: var(--matte-gold-soft);
+}
+.cta-fleet-text {
+  font-family: var(--serif-body);
+  font-size: 22px;
+  line-height: 1.55;
+  color: rgba(246, 240, 230, 0.8);
+  margin-bottom: 48px;
+  font-weight: 400;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-fleet-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta-fleet .btn {
+  border-color: var(--warm-ivory);
+  color: var(--warm-ivory);
+}
+.cta-fleet .btn:hover {
+  background: var(--warm-ivory);
+  color: var(--deep-ocean);
+}
+.cta-fleet .btn-gold {
+  background: var(--matte-gold);
+  color: var(--deep-ocean);
+  border-color: var(--matte-gold);
+}
+.cta-fleet .btn-gold:hover {
+  background: var(--matte-gold-deep);
+  border-color: var(--matte-gold-deep);
+  color: var(--warm-ivory);
+}
+
+/* ---------- CONTACT ---------- */
+.contact {
+  background: var(--warm-ivory);
+  position: relative;
+  overflow: hidden;
+}
+.contact-cn-bg {
+  position: absolute;
+  font-family: var(--cn);
+  font-size: clamp(280px, 36vw, 520px);
+  color: var(--imperial-red);
+  opacity: 0.04;
+  font-weight: 700;
+  bottom: -10%;
+  right: -6%;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+}
+.contact-info-list {
+  margin-top: 56px;
+  display: grid;
+  gap: 28px;
+}
+.contact-info-item {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.contact-info-label {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--imperial-red);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.contact-info-value {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--deep-ocean);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.contact-info-meta {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  color: var(--deep-ocean-soft);
+  font-style: italic;
+}
+
+.form {
+  background: var(--warm-ivory-cream);
+  padding: 56px;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.form .corner.tl { top: -1px; left: -1px; border-color: var(--imperial-red); }
+.form .corner.tr { top: -1px; right: -1px; border-color: var(--imperial-red); }
+.form .corner.bl { bottom: -1px; left: -1px; border-color: var(--imperial-red); }
+.form .corner.br { bottom: -1px; right: -1px; border-color: var(--imperial-red); }
+.form .corner { width: 28px; height: 28px; }
+
+.form-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+  color: var(--deep-ocean);
+}
+.form-subtitle {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  color: var(--deep-ocean-soft);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+.form-row { margin-bottom: 24px; }
+.form-row.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.form-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--deep-ocean-soft);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--deep-ocean);
+  outline: none;
+  transition: border-color 0.3s;
+  font-weight: 400;
+}
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--deep-ocean-soft);
+  font-style: italic;
+  opacity: 0.6;
+}
+.form-textarea {
+  resize: none;
+  min-height: 100px;
+  font-family: var(--serif-body);
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--imperial-red);
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--deep-ocean);
+  color: var(--warm-ivory);
+  border: none;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.4s var(--ease);
+}
+.form-submit:hover {
+  background: var(--imperial-red);
+}
+.form-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--deep-ocean-soft);
+  text-align: center;
+  font-family: var(--serif-body);
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+  .form { padding: 32px; }
+  .form-row.split { grid-template-columns: 1fr; }
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--graphite);
+  color: var(--warm-ivory);
+  padding: 80px 56px 32px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.15);
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.footer-logo-cn {
+  font-family: var(--cn);
+  font-size: 32px;
+  color: #c44047;
+  font-weight: 600;
+}
+.footer-logo-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--warm-ivory);
+}
+.footer-brand-desc {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(246, 240, 230, 0.6);
+  font-weight: 400;
+  max-width: 420px;
+  margin-bottom: 24px;
+}
+.footer-brand-tag {
+  font-family: var(--serif-body);
+  font-style: italic;
+  color: var(--matte-gold-soft);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--matte-gold);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.footer-col ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.footer-col a {
+  font-family: var(--serif-body);
+  font-size: 16px;
+  color: rgba(246, 240, 230, 0.7);
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--matte-gold-soft); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(246, 240, 230, 0.4);
+  font-family: var(--serif-body);
+  font-style: italic;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-bottom strong {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(246, 240, 230, 0.7);
+}
+
+@media (max-width: 1024px) {
+  .footer { padding: 60px 24px 24px; }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+  }
+}
+
+/* ---------- REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-cn">海航</span>
+    <div class="nav-logo-divider"></div>
+    <div class="nav-logo-name">
+      Asian Yachts
+      <em>Twelfth Night Limited</em>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#story">О нас</a>
+    <a href="#philosophy">Философия</a>
+    <a href="#journey">Процесс</a>
+    <a href="#legal">Гарантии</a>
+    <a href="#contact">Контакты</a>
+  </div>
+  <div class="nav-actions">
+    <a href="#" class="btn nav-fleet">Каталог яхт</a>
+    <a href="#contact" class="btn btn-red">Связаться</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-cn-deco cn-1">海</div>
+  <div class="hero-cn-deco cn-2">航</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Hong Kong · Singapore · Phuket</span>
+      <span class="hero-eyebrow-cn">自二〇一八年</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="row">Премиальные&nbsp;яхты</span>
+      <span class="row"><em>из&nbsp;сердца&nbsp;Азии</em></span>
+      <span class="row">с&nbsp;доставкой под&nbsp;ключ.</span>
+    </h1>
+
+    <div class="hero-wave">
+      <svg viewBox="0 0 720 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M 5,25 C 60,8 120,42 180,25 C 240,5 300,45 360,27 C 420,10 480,40 540,23 C 600,7 660,35 715,25" stroke="#0F2E4D" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 5,30 C 60,15 120,45 180,30 C 240,12 300,48 360,32 C 420,15 480,42 540,28 C 600,12 660,38 715,30" stroke="#0F2E4D" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="hero-lead">
+          Twelfth Night Limited — лицензированный брокер из&nbsp;Гонконга.
+          Подбираем, выкупаем и&nbsp;доставляем подержанные яхты класса люкс
+          из&nbsp;Азии напрямую к&nbsp;вашему причалу. <em>Прозрачная цена. 35&nbsp;дней до&nbsp;борта.</em>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-red btn-large">Получить консультацию</a>
+          <a href="#" class="btn btn-large">Смотреть каталог</a>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <div class="hero-meta-num">100<em>+</em></div>
+          <div class="hero-meta-label">сделок<br>с 2018 года</div>
+        </div>
+        <div>
+          <div class="hero-meta-num">35<em>дн.</em></div>
+          <div class="hero-meta-label">срок<br>доставки</div>
+        </div>
+        <div>
+          <div class="hero-meta-num">4<em>стран</em></div>
+          <div class="hero-meta-label">партнёрские<br>марины</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item">Princess</div>
+    <div class="marquee-item">Azimut</div>
+    <div class="marquee-item">Sunseeker</div>
+    <div class="marquee-item">Ferretti</div>
+    <div class="marquee-item">Riviera</div>
+    <div class="marquee-item">Fairline</div>
+    <div class="marquee-item">Beneteau</div>
+    <div class="marquee-item">Princess</div>
+    <div class="marquee-item">Azimut</div>
+    <div class="marquee-item">Sunseeker</div>
+    <div class="marquee-item">Ferretti</div>
+    <div class="marquee-item">Riviera</div>
+    <div class="marquee-item">Fairline</div>
+    <div class="marquee-item">Beneteau</div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="section story" id="story">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">
+          О компании <span class="section-eyebrow-cn">关于我们</span>
+        </div>
+        <h2 class="section-title">
+          Семь лет<br>
+          в&nbsp;<em>сердце Азии</em>.
+        </h2>
+      </div>
+      <p class="section-lead">
+        Мы&nbsp;— компания, рождённая в&nbsp;точке встречи восточной точности
+        и&nbsp;западной деловой этики. Наша задача — сделать сложные
+        международные сделки <em>простыми</em>, а&nbsp;мечту о&nbsp;яхте — реальностью.
+      </p>
+    </div>
+
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <p>
+          <strong>Twelfth Night Limited</strong> зарегистрирована в&nbsp;Гонконге в&nbsp;2018&nbsp;году.
+          С&nbsp;первых дней мы&nbsp;строили компанию вокруг одного принципа:
+          покупатель из&nbsp;России должен получать ту&nbsp;же&nbsp;<em>яхту, цену и&nbsp;уровень
+          сервиса</em>, что и&nbsp;покупатель из&nbsp;Сингапура или Шанхая.
+        </p>
+        <p>
+          За&nbsp;это время мы&nbsp;провели <strong>более 100 сделок</strong> с&nbsp;яхтами
+          ведущих европейских и&nbsp;японских верфей — Princess, Azimut,
+          Sunseeker, Ferretti, Riviera. Лично осматривали каждую яхту
+          в&nbsp;маринах Гонконга, Сингапура, Пхукета и&nbsp;Куала-Лумпура.
+        </p>
+        <p>
+          Asian Yachts — публичный бренд, которым мы&nbsp;общаемся с&nbsp;клиентами
+          и&nbsp;рынком. Twelfth Night Limited — юридическая основа: офис
+          с&nbsp;переговорной в&nbsp;деловом центре Гонконга, договоры MOA
+          международного образца, прямой банковский расчёт компания → компания.
+        </p>
+        <p>
+          <em>Мы соединяем Восток и&nbsp;Запад, традиции и&nbsp;технологии,
+          доверие и&nbsp;результат.</em>
+        </p>
+      </div>
+
+      <div class="story-visual reveal delay-1">
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+        <div class="story-visual-cn">海</div>
+        <div class="story-visual-content">
+          <div class="story-visual-label">Наша миссия</div>
+          <div class="story-visual-quote">
+            Делать сложные сделки <em>простыми</em>,<br>
+            а мечту о&nbsp;яхте — <em>реальностью</em>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section philosophy" id="philosophy">
+  <div class="philosophy-cn-bg">道</div>
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">
+          Философия <span class="section-eyebrow-cn">哲学</span>
+        </div>
+        <h2 class="section-title">
+          Три <em>принципа</em>,<br>
+          одно слово.
+        </h2>
+      </div>
+      <p class="section-lead">
+        Мы не торгуем лодками. Мы соединяем редкие яхты с&nbsp;редкими людьми —
+        и&nbsp;делаем это так, чтобы между намерением и&nbsp;первым выходом в&nbsp;море
+        не&nbsp;осталось ни&nbsp;одной шероховатости.
+      </p>
+    </div>
+
+    <div class="principles">
+      <div class="principle reveal delay-1">
+        <div class="principle-head">
+          <div class="principle-num">— 01</div>
+          <div class="principle-cn">真</div>
+        </div>
+        <h3 class="principle-title">Подлинность<br>каждой яхты</h3>
+        <p class="principle-text">
+          Мы лично осматриваем каждую яхту в&nbsp;маринах Азии. Знаем историю,
+          владельцев, регламент обслуживания и&nbsp;все скрытые нюансы.
+          Никаких объявлений вслепую — только проверенный флот.
+        </p>
+      </div>
+      <div class="principle reveal delay-2">
+        <div class="principle-head">
+          <div class="principle-num">— 02</div>
+          <div class="principle-cn">明</div>
+        </div>
+        <h3 class="principle-title">Прозрачность<br>цены</h3>
+        <p class="principle-text">
+          Цена в&nbsp;объявлении — финальная. В&nbsp;неё включена яхта, доставка,
+          таможня ЕАЭС, страховка и&nbsp;защитная упаковка корпуса.
+          Никаких сюрпризов и&nbsp;скрытых платежей.
+        </p>
+      </div>
+      <div class="principle reveal delay-3">
+        <div class="principle-head">
+          <div class="principle-num">— 03</div>
+          <div class="principle-cn">信</div>
+        </div>
+        <h3 class="principle-title">Доверие<br>через структуру</h3>
+        <p class="principle-text">
+          Договор MOA международного образца. Прямой расчёт между
+          компаниями — без посредников и&nbsp;наличных. Юридическая база —
+          Twelfth Night Limited, Гонконг.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section journey" id="journey">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">
+          Путь к&nbsp;яхте <span class="section-eyebrow-cn">旅程</span>
+        </div>
+        <h2 class="section-title">
+          Шесть этапов.<br>
+          Один <em>результат</em>.
+        </h2>
+      </div>
+      <p class="section-lead">
+        От&nbsp;первого сообщения до&nbsp;момента, когда вы&nbsp;поднимаетесь на&nbsp;борт —
+        каждый шаг отлажен и&nbsp;задокументирован. Мы ведём процесс
+        одновременно на&nbsp;русском и&nbsp;английском.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">I.</div>
+        <div>
+          <div class="step-meta">День 1—3</div>
+          <h3 class="step-name">Знакомство</h3>
+        </div>
+        <p class="step-desc">Обсуждаем задачу: размер, бюджет, регион эксплуатации, частота выходов. Подбираем 3—5 подходящих яхт из&nbsp;текущего флота наших партнёров в&nbsp;Азии.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">Что вы получаете</span>
+          PDF-досье на каждую яхту: фото, видео, история обслуживания, причина продажи, итоговая цена под ключ.
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">II.</div>
+        <div>
+          <div class="step-meta">День 4—10</div>
+          <h3 class="step-name">Перелёт<br>и осмотр</h3>
+        </div>
+        <p class="step-desc">Встречаем в&nbsp;аэропорту Гонконга, Сингапура или Пхукета. Размещение, программа осмотра яхт, визиты в&nbsp;марины и&nbsp;переговорные дилеров — всё организуем под ключ.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">Включено</span>
+          Трансферы, программа на 3—5 дней, переводчик, независимый сюрвейер по запросу. Все расходы — на стороне дилера.
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">III.</div>
+        <div>
+          <div class="step-meta">День 11—14</div>
+          <h3 class="step-name">Договор MOA</h3>
+        </div>
+        <p class="step-desc">Подписываем международный договор Memorandum of Agreement в&nbsp;офисе дилера. Чёткие сроки, обязательства сторон, гарантии. Все документы — на&nbsp;английском и&nbsp;русском.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">Защита покупателя</span>
+          Право независимого сюрвея, возможность отказа при выявлении скрытых дефектов, страхование на всю стоимость яхты.
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">IV.</div>
+        <div>
+          <div class="step-meta">День 14—15</div>
+          <h3 class="step-name">Прямая оплата</h3>
+        </div>
+        <p class="step-desc">Банковский перевод напрямую лицензированному дилеру. Никаких посредников, кешбоксов и&nbsp;физических лиц. С&nbsp;момента поступления средств яхта юридически ваша.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">Структура расчёта</span>
+          Компания → компания. SWIFT либо альтернативные легальные каналы. Полное документальное сопровождение.
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">V.</div>
+        <div>
+          <div class="step-meta">День 15—40</div>
+          <h3 class="step-name">Логистика<br>и таможня</h3>
+        </div>
+        <p class="step-desc">Защитная упаковка корпуса, погрузка на&nbsp;специализированный трал или морское судно. Таможня ЕАЭС со&nbsp;всеми сборами. Регулярные отчёты с&nbsp;трек-номером.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">Вы видите процесс</span>
+          Фото и видео упаковки, движения, прохождения таможни. Ваш персональный менеджер на связи 24/7.
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">VI.</div>
+        <div>
+          <div class="step-meta">День 40—50</div>
+          <h3 class="step-name">Передача яхты</h3>
+        </div>
+        <p class="step-desc">Финальная разгрузка в&nbsp;вашем регионе. Видеоотчёт, акт передачи, поддержка по&nbsp;регистрации в&nbsp;ГИМС, рекомендации по&nbsp;сезонной стоянке и&nbsp;экипажу.</p>
+        <div class="step-detail">
+          <span class="step-detail-label">И после сделки</span>
+          Связь с верфями для ремонта, поставки запчастей из Азии, рекомендации по экипажу и страхованию.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section trust">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">
+          В цифрах <span class="section-eyebrow-cn">数据</span>
+        </div>
+        <h2 class="section-title">
+          Семь лет.<br>
+          Сто <em>сделок</em>.<br>
+          Ноль разочарований.
+        </h2>
+      </div>
+      <p class="section-lead">
+        Мы не самые шумные на&nbsp;рынке — но&nbsp;мы&nbsp;те, кого рекомендуют
+        своим друзьям. Большая часть наших клиентов приходит
+        по&nbsp;личной рекомендации предыдущих покупателей.
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item reveal delay-1">
+        <div class="trust-num">100<sup>+</sup></div>
+        <div class="trust-label">завершённых сделок<br>с 2018 года</div>
+      </div>
+      <div class="trust-item reveal delay-2">
+        <div class="trust-num">35<em>дн.</em></div>
+        <div class="trust-label">средний срок доставки<br>от оплаты до борта</div>
+      </div>
+      <div class="trust-item reveal delay-3">
+        <div class="trust-num">4<em>страны</em></div>
+        <div class="trust-label">Гонконг · Сингапур<br>Таиланд · Малайзия</div>
+      </div>
+      <div class="trust-item reveal delay-4">
+        <div class="trust-num">62<em>%</em></div>
+        <div class="trust-label">клиентов приходят<br>по&nbsp;рекомендации</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="section legal" id="legal">
+  <div class="legal-cn-bg">信</div>
+  <div class="container">
+    <div class="legal-grid">
+      <div class="legal-seal-wrap reveal">
+        <div class="legal-seal">
+          <div class="legal-seal-paper"></div>
+          <svg class="legal-seal-stamp" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="rough" x="-2%" y="-2%" width="104%" height="104%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="turb"/>
+                <feDisplacementMap in="SourceGraphic" in2="turb" scale="2.2"/>
+              </filter>
+            </defs>
+            <g filter="url(#rough)">
+              <rect x="20" y="20" width="440" height="440" fill="none" stroke="#A11E22" stroke-width="14"/>
+              <rect x="40" y="40" width="400" height="400" fill="none" stroke="#A11E22" stroke-width="3"/>
+              <line x1="180" y1="50" x2="180" y2="430" stroke="#A11E22" stroke-width="3"/>
+              <text x="100" y="190" font-family="Noto Serif SC, serif" font-size="110" font-weight="700" fill="#A11E22" text-anchor="middle">首</text>
+              <text x="100" y="340" font-family="Noto Serif SC, serif" font-size="110" font-weight="700" fill="#A11E22" text-anchor="middle">涛</text>
+              <line x1="210" y1="200" x2="430" y2="200" stroke="#A11E22" stroke-width="3"/>
+              <line x1="210" y1="320" x2="430" y2="320" stroke="#A11E22" stroke-width="3"/>
+              <text x="320" y="248" font-family="Playfair Display, serif" font-size="36" font-weight="700" fill="#A11E22" text-anchor="middle" letter-spacing="2">TWELFTH</text>
+              <text x="320" y="298" font-family="Playfair Display, serif" font-size="36" font-weight="700" fill="#A11E22" text-anchor="middle" letter-spacing="2">NIGHT</text>
+            </g>
+            <g filter="url(#rough)" transform="translate(320, 130)">
+              <ellipse cx="0" cy="20" rx="68" ry="30" fill="#A11E22"/>
+              <ellipse cx="-18" cy="-10" rx="42" ry="36" fill="#A11E22"/>
+              <circle cx="-50" cy="-20" r="12" fill="#A11E22"/>
+              <circle cx="-58" cy="-8" r="10" fill="#A11E22"/>
+              <circle cx="-50" cy="6" r="11" fill="#A11E22"/>
+              <circle cx="-32" cy="-32" r="11" fill="#A11E22"/>
+              <circle cx="-12" cy="-38" r="12" fill="#A11E22"/>
+              <circle cx="-12" cy="-12" r="3" fill="#F6F0E6"/>
+              <ellipse cx="20" cy="30" rx="40" ry="22" fill="#A11E22"/>
+              <path d="M 50,20 Q 70,0 75,-15 Q 65,-5 55,5 Q 70,-5 78,5 Q 70,10 60,15 Q 75,15 80,25 Q 70,22 58,28 Z" fill="#A11E22"/>
+              <rect x="-25" y="42" width="8" height="20" fill="#A11E22"/>
+              <rect x="-5" y="42" width="8" height="20" fill="#A11E22"/>
+              <rect x="20" y="46" width="8" height="16" fill="#A11E22"/>
+              <rect x="38" y="46" width="8" height="16" fill="#A11E22"/>
+              <circle cx="-40" cy="55" r="8" fill="none" stroke="#A11E22" stroke-width="3"/>
+            </g>
+            <g filter="url(#rough)" transform="translate(320, 390) scale(1, -1)">
+              <ellipse cx="0" cy="20" rx="68" ry="30" fill="#A11E22"/>
+              <ellipse cx="18" cy="-10" rx="42" ry="36" fill="#A11E22"/>
+              <circle cx="50" cy="-20" r="12" fill="#A11E22"/>
+              <circle cx="58" cy="-8" r="10" fill="#A11E22"/>
+              <circle cx="50" cy="6" r="11" fill="#A11E22"/>
+              <circle cx="32" cy="-32" r="11" fill="#A11E22"/>
+              <circle cx="12" cy="-38" r="12" fill="#A11E22"/>
+              <circle cx="12" cy="-12" r="3" fill="#F6F0E6"/>
+              <ellipse cx="-20" cy="30" rx="40" ry="22" fill="#A11E22"/>
+              <path d="M -50,20 Q -70,0 -75,-15 Q -65,-5 -55,5 Q -70,-5 -78,5 Q -70,10 -60,15 Q -75,15 -80,25 Q -70,22 -58,28 Z" fill="#A11E22"/>
+              <rect x="17" y="42" width="8" height="20" fill="#A11E22"/>
+              <rect x="-3" y="42" width="8" height="20" fill="#A11E22"/>
+              <rect x="-28" y="46" width="8" height="16" fill="#A11E22"/>
+              <rect x="-46" y="46" width="8" height="16" fill="#A11E22"/>
+              <circle cx="40" cy="55" r="8" fill="none" stroke="#A11E22" stroke-width="3"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="legal-content reveal delay-1">
+        <div class="section-eyebrow">
+          Юридическая основа <span class="section-eyebrow-cn">法律</span>
+        </div>
+        <h2 class="section-title">
+          Twelfth Night<br>
+          <em>Limited</em>.
+        </h2>
+        <p class="legal-text">
+          <strong>Asian Yachts</strong> — публичный бренд. За&nbsp;ним стоит
+          зарегистрированная в&nbsp;Гонконге компания <strong>Twelfth Night Limited</strong>
+          с&nbsp;офисом и&nbsp;переговорной в&nbsp;деловом центре. Все договоры,
+          инвойсы и&nbsp;официальные документы оформляются на&nbsp;юридическое лицо.
+        </p>
+
+        <div class="legal-points">
+          <div class="legal-point">
+            <div class="legal-point-icon">壹</div>
+            <div class="legal-point-text">
+              <strong>Реальный офис в Гонконге</strong>
+              Юридический адрес и переговорная для встреч с клиентами и подписания документов.
+            </div>
+          </div>
+          <div class="legal-point">
+            <div class="legal-point-icon">貳</div>
+            <div class="legal-point-text">
+              <strong>Договор MOA международного формата</strong>
+              Memorandum of Agreement признаётся всеми мировыми морскими брокерами и страховыми.
+            </div>
+          </div>
+          <div class="legal-point">
+            <div class="legal-point-icon">參</div>
+            <div class="legal-point-text">
+              <strong>Прямой расчёт компания → компания</strong>
+              SWIFT-перевод напрямую дилеру. Никаких физических лиц и&nbsp;кешбоксов в&nbsp;цепочке.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="testimonial-quote-mark">"</div>
+  <div class="testimonial-cn">声</div>
+  <div class="testimonial-content">
+    <div class="testimonial-eyebrow reveal">Голос клиента · 客户评价</div>
+    <blockquote class="testimonial-quote reveal delay-1">
+      Мы летели в&nbsp;Гонконг с&nbsp;осторожностью — слишком большая сумма,
+      слишком далеко. Через три дня осмотров, <em>ужин в&nbsp;Marina&nbsp;Cove</em>
+      и&nbsp;подписание договора в&nbsp;офисе дилера. Через тридцать четыре дня
+      яхта стояла на&nbsp;воде в&nbsp;Сочи. <em>Без единого сюрприза.</em>
+    </blockquote>
+    <div class="testimonial-author reveal delay-2">
+      <div class="testimonial-avatar">А</div>
+      <div>
+        <div class="testimonial-name">Александр К.</div>
+        <div class="testimonial-meta">Москва · Princess 50 · 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FLEET -->
+<section class="cta-fleet">
+  <div class="cta-fleet-cn">舟</div>
+  <div class="cta-fleet-content">
+    <div class="cta-fleet-eyebrow reveal">Текущий флот · 当前船队</div>
+    <h2 class="cta-fleet-title reveal delay-1">
+      Готовые к&nbsp;<em>новому</em><br>
+      владельцу.
+    </h2>
+    <p class="cta-fleet-text reveal delay-2">
+      В&nbsp;нашем активном портфеле — десятки яхт от&nbsp;премиум-верфей,
+      каждая лично осмотрена и&nbsp;готова к&nbsp;показу. Цены — финальные,
+      под&nbsp;ключ, с&nbsp;доставкой в&nbsp;Россию.
+    </p>
+    <div class="cta-fleet-actions reveal delay-3">
+      <a href="#" class="btn btn-gold btn-large">Открыть каталог яхт</a>
+      <a href="#contact" class="btn btn-large">Запросить персональный подбор</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="contact-cn-bg">联</div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-eyebrow">
+          Связаться с нами <span class="section-eyebrow-cn">联系</span>
+        </div>
+        <h2 class="section-title" style="font-size: clamp(40px, 4.8vw, 72px);">
+          Расскажите<br>
+          о&nbsp;<em>яхте мечты</em>.
+        </h2>
+        <p style="font-family: var(--serif-body); font-size: 19px; line-height: 1.6; margin-top: 32px; color: var(--deep-ocean); max-width: 480px; font-weight: 400;">
+          Ответим в&nbsp;течение часа в&nbsp;рабочее время Бангкока (UTC+7).
+          Подберём 3—5 вариантов под&nbsp;ваши задачи и&nbsp;пришлём
+          PDF-досье с&nbsp;финальной ценой под&nbsp;ключ.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-label">Офис</div>
+            <div class="contact-info-value">Hong Kong, Central</div>
+            <div class="contact-info-meta">переговорная по записи</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Партнёрские марины</div>
+            <div class="contact-info-value">HK · Singapore · Phuket</div>
+            <div class="contact-info-meta">осмотр яхт круглый год</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Время ответа</div>
+            <div class="contact-info-value">До 1 часа</div>
+            <div class="contact-info-meta">в рабочее время Бангкока</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="form reveal delay-1" id="contactForm">
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+
+        <h3 class="form-title">Запрос на&nbsp;подбор</h3>
+        <p class="form-subtitle">Получите 3—5 вариантов с&nbsp;финальной ценой</p>
+
+        <div class="form-row split">
+          <div>
+            <label class="form-label">Имя</label>
+            <input type="text" class="form-input" placeholder="Александр" required>
+          </div>
+          <div>
+            <label class="form-label">Телефон</label>
+            <input type="tel" class="form-input" placeholder="+7 ___ ___ __ __" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Бюджет</label>
+          <select class="form-select">
+            <option>До 15 млн ₽</option>
+            <option>15 — 30 млн ₽</option>
+            <option>30 — 50 млн ₽</option>
+            <option>50 — 80 млн ₽</option>
+            <option>Свыше 80 млн ₽</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Размер и тип</label>
+          <input type="text" class="form-input" placeholder="например, моторная 50—60 ft">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Где будете эксплуатировать</label>
+          <input type="text" class="form-input" placeholder="Сочи · Москва · Владивосток">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Дополнительно</label>
+          <textarea class="form-textarea" placeholder="Любые пожелания: бренды, ходовой опыт, требования к каютам…"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Отправить запрос</button>
+        <p class="form-note">Услуги для покупателя бесплатны. Комиссия на стороне продавца.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span class="footer-logo-cn">海航</span>
+          <span class="footer-logo-name">ASIAN YACHTS</span>
+        </div>
+        <p class="footer-brand-desc">
+          Премиальный брокер яхт из&nbsp;Гонконга, Сингапура и&nbsp;Таиланда
+          с&nbsp;2018&nbsp;года. Юридическое лицо — Twelfth Night Limited (Hong Kong).
+          Доставка в&nbsp;Россию и&nbsp;СНГ под&nbsp;ключ.
+        </p>
+        <div class="footer-brand-tag">— Direct Yachts from Asia —</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Навигация</div>
+        <ul>
+          <li><a href="#story">О нас</a></li>
+          <li><a href="#philosophy">Философия</a></li>
+          <li><a href="#journey">Процесс сделки</a></li>
+          <li><a href="#legal">Гарантии</a></li>
+          <li><a href="#">Каталог яхт</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Услуги</div>
+        <ul>
+          <li><a href="#">Подбор яхты</a></li>
+          <li><a href="#">Доставка под ключ</a></li>
+          <li><a href="#">Сюрвей · осмотр</a></li>
+          <li><a href="#">Регистрация ГИМС</a></li>
+          <li><a href="#">Запчасти из Азии</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <ul>
+          <li><a href="#">Hong Kong, Central</a></li>
+          <li><a href="#">contact@asianyachts.com</a></li>
+          <li><a href="#">Telegram @asianyachts</a></li>
+          <li><a href="#">WhatsApp Business</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 <strong>Twelfth Night Limited</strong>. All rights reserved.</div>
+      <div>Hong Kong · Bangkok · Moscow · Vladivostok</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 80) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  reveals.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Form submit
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо! Мы свяжемся с вами в течение часа.');
+    });
+  }
+</script>
+
+</body>
+</html>
